@@ -12,7 +12,7 @@ Printer::Printer(volatile uint8_t *port, uint8_t strobe, uint8_t busy, uint8_t s
   // Store objects and variables
   _Serial = NULL;
   _port = port;
-  portMode = true;
+  port_mode = true;
   
   _strobe = strobe;
   _busy = busy;
@@ -33,7 +33,7 @@ Printer::Printer(uint8_t bit7, uint8_t bit6, uint8_t bit5, uint8_t bit4, uint8_t
   // Store objects and variables
   _Serial = NULL;
   _port = NULL;
-  portMode = false;
+  pin_mode = true;
   
   _dataBit7 = bit7;
   _dataBit6 = bit6;
@@ -296,7 +296,7 @@ void Printer::writeByte(uint8_t character)
   }
 
   // If a port is used for the parallel data
-  if(portMode == true)
+  if(port_mode)
   {
     // Set the bits
     *_port = character;
@@ -311,7 +311,7 @@ void Printer::writeByte(uint8_t character)
   }
 
   // Else if each data pin is individually selected
-  else
+  else if(pin_mode)
   {
     // Set the bits
     digitalWrite(_dataBit7, bitRead(character, 7));
