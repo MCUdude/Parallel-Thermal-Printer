@@ -1,3 +1,15 @@
+ /*------------ Parallel Thermal Printer library ----------------|
+ |                                                               |
+ | Created April 2016 by MCUdude, https://github.com/MCUdude     |
+ | Released to public domain                                     |
+ |                                                               |
+ | This library lets you interface with a POS thermal printer    |
+ | with a parallel interface using an Arduino or an Arduino      |
+ | compatible microcontroller.                                   |
+ |                                                               |
+ |--------------------------------------------------------------*/
+
+
 #include "Arduino.h"
 
 #ifndef Printer_h
@@ -171,10 +183,9 @@ class Printer
     // Private HW and object related data    
     volatile uint8_t *_port;
     HardwareSerial *_Serial;
-    bool portMode;
+    bool port_mode = false;
+    bool pin_mode = false;
 
-
-    // Private variables
 
     // Hardware relatred
     uint8_t _dataBit7;
