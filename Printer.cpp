@@ -1,3 +1,15 @@
+ /*------------ Parallel Thermal Printer library ----------------|
+ |                                                               |
+ | Created April 2016 by MCUdude, https://github.com/MCUdude     |
+ | Released to public domain                                     |
+ |                                                               |
+ | This library lets you interface with a POS thermal printer    |
+ | with a parallel interface using an Arduino or an Arduino      |
+ | compatible microcontroller.                                   |
+ |                                                               |
+ |--------------------------------------------------------------*/
+
+
 #include "Printer.h"
 #include "Arduino.h"
 
